@@ -1,21 +1,30 @@
-Hello! I'm your friendly chatbot. Ask me anything, or let me know if you'd like some conversation starters!
-Hi there! I'm here to chat. Feel free to ask me questions, or I can share something interesting with you. What would you like to do?
-Hey! How's your day going? If you're looking for a fun fact, did you know that octopuses have three hearts?
-Welcome! I'm your virtual assistant. Need help, want to learn something new, or just feel like chatting? Let me know!
-Greetings! I'm a chatbot designed to assist and entertain. Ask me about technology, science, or even random trivia. Or, I can ask you something!
-Hello! Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are still edible after thousands of years. Fascinating, right?
-Hey! I'm curious—what's the most interesting thing you've learned recently? Or, let me tell you something cool: space is completely silent because there's no air to carry sound waves.
-Good to see you! Want to hear a fun fact? Bananas are technically berries, while strawberries aren't. Isn't that surprising?
-Hi! I love sharing knowledge. Ask me anything, or let me surprise you with an interesting tidbit. Ready?
-Hello again! Did you know that the Eiffel Tower was initially criticized by many French artists but has since become a global icon? What do you think makes it so special?
-Hey there! Let's chat. Ask me a question, or I'll ask you one: what's your favorite type of music, and why?
-Welcome back! I'm always here to help or entertain. Ask me something, or let me share a random fact: Mount Everest grows about 4 millimeters taller every year due to tectonic activity.
-Hello! I'm your go-to assistant for answers, advice, or just good conversation. What's on your mind today?
-Hi! Let's play a game. I'll ask you a question first: if you could travel anywhere in the world, where would you go and why?
-Hey! I'm here to make your day brighter. Ask me anything, or let me tell you something intriguing: the average human blinks about 15-20 times per minute.
-Good to meet you! I'm your chatbot companion. Ask me a question, or I'll start: did you know that the shortest war in history was between Britain and Zanzibar, lasting only 38 minutes?
-Hello! I'm ready to assist, entertain, or just chat. What would you like to talk about today?
-Hi! Let's get to know each other. Ask me something, or I'll ask you: what's your favorite book, and why does it resonate with you?
-Hey! I'm your personal assistant and conversation partner. Ask me a question, or let me share a fun fact: the Great Wall of China is visible from space under certain conditions.
-Welcome! I'm here to help, inform, or simply chat. What's on your mind right now?
-Hello! I'm your chatbot. Ask me what I can do, or let me surprise you with an interesting piece of information. Ready to dive in?
+Hi! I'm DentBot, your friendly dental assistant chatbot. I'm here to help you with any dental questions or concerns.
+Welcome! I specialize in providing information about dental care, procedures, and oral health.
+Regular dental check-ups are recommended every 6 months to maintain optimal oral health and prevent dental problems.
+Brushing your teeth should be done at least twice a day, using fluoride toothpaste and a soft-bristled toothbrush.
+A dental cleaning (prophylaxis) is a professional cleaning procedure that removes plaque, tartar, and stains from your teeth.
+Root canal treatment is performed to treat severely damaged or infected tooth pulp while preserving the natural tooth structure.
+Dental crowns are cap-like restorations that cover damaged teeth to restore their shape, size, strength, and appearance.
+Dental implants are artificial tooth roots made of titanium that provide a permanent base for fixed replacement teeth.
+Tooth sensitivity can be caused by worn enamel, exposed tooth roots, cavities, cracked teeth, or gum disease.
+Gingivitis is an early stage of gum disease characterized by red, swollen gums that may bleed during brushing or flossing.
+Dental sealants are thin protective coatings applied to the chewing surfaces of back teeth to prevent cavities.
+Teeth whitening is a cosmetic procedure that can be done professionally at a dental office or at home with dentist-approved products.
+Common signs of cavities include tooth sensitivity, visible holes, dark spots, or pain when biting down.
+Wisdom teeth removal may be recommended if these molars are impacted, causing pain, or potentially harmful to other teeth.
+Emergency dental situations include severe tooth pain, knocked-out teeth, broken teeth, or severe bleeding from the mouth.
+Dental x-rays are important diagnostic tools that help dentists detect problems not visible during a regular dental exam.
+To maintain good oral hygiene, you should brush twice daily, floss daily, use mouthwash, and maintain a healthy diet.
+Dental anxiety is common, and modern dentistry offers various solutions including sedation options to help nervous patients.
+Orthodontic treatment (braces or clear aligners) can correct misaligned teeth and improve both appearance and oral function.
+Gum disease is preventable through good oral hygiene, regular dental visits, and avoiding tobacco products.
+A balanced diet low in sugary foods and drinks helps prevent tooth decay and promotes overall oral health.
+Fluoride treatments help prevent tooth decay by making teeth more resistant to acid attacks from plaque and sugars.
+Regular flossing helps remove plaque and food particles between teeth where your toothbrush can't reach.
+If you have a dental emergency, contact your dentist immediately or seek emergency dental care.
+Children should have their first dental visit by their first birthday or when their first tooth appears.
+Bad breath (halitosis) can be caused by poor oral hygiene, gum disease, food choices, or underlying health conditions.
+Missing teeth can be replaced with dental implants, bridges, or dentures depending on your specific situation.
+Professional teeth cleaning includes scaling to remove tartar, polishing to remove stains, and fluoride treatment if needed.
+Tooth-colored fillings (composite resins) can repair cavities while maintaining a natural appearance.
+Our dental office uses modern technology and techniques to ensure comfortable and effective treatment.
