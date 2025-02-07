@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.chat-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.message {
+    margin-bottom: 1rem;
+}
+
+.user-message {
+    text-align: right;
+    color: #333;
+}
+
+.bot-message {
+    text-align: left;
+    color: #007bff;
+}
+
+.input-container {
+    margin-top: 1rem;
+}
