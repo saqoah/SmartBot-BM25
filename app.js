@@ -60,6 +60,10 @@ class Tokenizer {
         return this.preprocessText(text);
     }
 
+    detokenize(tokens) {
+        return tokens.map(token => `<token_${Math.floor(Math.abs(token) % this.vocabSize)}>`).join(" ");
+    }
+
     preprocessText(text) {
         return text.toLowerCase()
             .replace(/[^\w\s-]/g, " ")
@@ -142,50 +146,105 @@ class EnhancedDocumentStore {
     }
 }
 
-// Main Functionality
+// ChatBot class
+class ChatBot {
+    constructor(documentStore) {
+        this.documentStore = documentStore;
+    }
+
+    async getResponse(userInput) {
+        const retrievedDocuments = this.documentStore.retrieve(userInput, 1);
+        
+        if (retrievedDocuments.length === 0) {
+            return "I'm sorry, I don't have enough information to answer that question.";
+        }
+
+        const bestMatch = retrievedDocuments[0];
+        if (bestMatch.score < 0.1) {
+            return "I'm not quite sure about that. Could you please rephrase your question?";
+        }
+
+        return bestMatch.doc;
+    }
+}
+
+// UI Helper Functions
+function addMessage(message, isUser = false) {
+    const chatContainer = document.getElementById('chatContainer');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${isUser ? 'user-message' : 'bot-message'}`;
+    messageDiv.textContent = message;
+    chatContainer.appendChild(messageDiv);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function showTypingIndicator() {
+    document.getElementById('typingIndicator').style.display = 'block';
+}
+
+function hideTypingIndicator() {
+    document.getElementById('typingIndicator').style.display = 'none';
+}
+
+// Initialize when the document is loaded
 document.addEventListener("DOMContentLoaded", async () => {
     const vocabSize = 1000;
     const embeddingDim = 128;
     const tokenizer = new Tokenizer(vocabSize);
     const embeddingLayer = new EmbeddingLayer(vocabSize, embeddingDim);
 
-    // Load dataset from data.txt
-    const response = await fetch('data.txt');
-    const dataset = (await response.text()).trim().split('\n');
+    try {
+        // Load dataset from data.txt
+        const response = await fetch('data.txt');
+        if (!response.ok) throw new Error('Failed to load data.txt');
+        
+        // Process the raw text data - each line is treated as a separate document
+        const dataset = (await response.text()).trim().split('\n');
+        const documentStore = new EnhancedDocumentStore(dataset, tokenizer, embeddingLayer);
+        const chatBot = new ChatBot(documentStore);
 
-    const documentStore = new EnhancedDocumentStore(dataset, tokenizer, embeddingLayer);
+        const queryInput = document.getElementById("queryInput");
+        const sendButton = document.getElementById("sendButton");
 
-    const chatContainer = document.getElementById("chatContainer");
-    const queryInput = document.getElementById("queryInput");
-    const sendButton = document.getElementById("sendButton");
+        async function handleUserInput() {
+            const userInput = queryInput.value.trim();
+            if (!userInput) return;
 
-    sendButton.addEventListener("click", () => {
-        const userInput = queryInput.value.trim();
-        if (!userInput) return;
+            // Clear input
+            queryInput.value = '';
 
-        // Add user message to chat
-        const userMessageDiv = document.createElement("div");
-        userMessageDiv.className = "message user-message";
-        userMessageDiv.innerHTML = `<strong>You:</strong> ${userInput}`;
-        chatContainer.appendChild(userMessageDiv);
+            // Add user message to chat
+            addMessage(userInput, true);
 
-        // Scroll to bottom
-        chatContainer.scrollTop = chatContainer.scrollHeight;
+            // Show typing indicator
+            showTypingIndicator();
 
-        // Get bot response
-        const retrievedDocuments = documentStore.retrieve(userInput, 1);
-        const botResponse = retrievedDocuments.length > 0 ? retrievedDocuments[0].doc : "I don't have an answer for that.";
+            try {
+                // Get bot response
+                const response = await chatBot.getResponse(userInput);
+                
+                // Simulate typing delay
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                // Hide typing indicator and add bot response
+                hideTypingIndicator();
+                addMessage(response, false);
+            } catch (error) {
+                hideTypingIndicator();
+                addMessage("Sorry, I encountered an error. Please try again.", false);
+                console.error('Error:', error);
+            }
+        }
 
-        // Add bot message to chat
-        const botMessageDiv = document.createElement("div");
-        botMessageDiv.className = "message bot-message";
-        botMessageDiv.innerHTML = `<strong>Bot:</strong> ${botResponse}`;
-        chatContainer.appendChild(botMessageDiv);
+        sendButton.addEventListener("click", handleUserInput);
+        queryInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                handleUserInput();
+            }
+        });
 
-        // Scroll to bottom
-        chatContainer.scrollTop = chatContainer.scrollHeight;
-
-        // Clear input field
-        queryInput.value = "";
-    });
+    } catch (error) {
+        console.error('Error initializing chatbot:', error);
+        addMessage("Sorry, I couldn't initialize properly. Please check if data.txt is available.", false);
+    }
 });
