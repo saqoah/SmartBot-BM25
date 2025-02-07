@@ -1,5 +1,4 @@
-## Demo
-     Check out the live demo of this project [https://venerable-gumption-59a3f1.netlify.app/].
+[Demo](https://venerable-gumption-59a3f1.netlify.app/)
 
 This data.txt includes:
 1. Friendly greetings and introduction (first two lines)
